@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block menu%}
-<li class="nav-item"><a href="/" class="nav-link">Главная</a></li>
+<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
 <li class="nav-item"><a href="#" class="nav-link">Каталог</a></li>
 <li class="nav-item"><a href="#" class="nav-link">Доставка и оплата</a></li>
 <li class="nav-item"><a href="#" class="nav-link">Документация</a></li>
-<li class="nav-item"><a href="/about_us" class="nav-link active" aria-current="page">Контакты</a></li>
+<li class="nav-item"><a href="{% url 'about' %}" class="nav-link active" aria-current="page">Контакты</a></li>
 {% endblock %}
 
 {% block content%}
