@@ -1,7 +1,7 @@
 {% extends "main/base.html" %}
 
-{% block title%}
-Главная страница
+{% block title %}
+{{ title }}
 {% endblock %}
 
 {% block menu%}
@@ -12,7 +12,13 @@
 <li class="nav-item"><a href="/about_us" class="nav-link">Контакты</a></li>
 {% endblock %}
 
-{% block content%}
+{% block content %}
 <h1>Главная страница</h1>
-    <p>Просто текст</p>
+    {% for el in tasks %}
+    <div class="alert alert-warning mt-2">
+        <h3>{{el.title}}</h3>
+        <p>{{el.task}}</p>
+        <p>{{el.clock}}</p>
+    </div>
+    {% endfor %}
 {% endblock %}

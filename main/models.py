@@ -5,5 +5,10 @@ class Task(models.Model):
     task = models.TextField("Описание")
     clock = models.FloatField("Время на занятие")
     created_on = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name="Задача"
+        verbose_name_plural = "Задачи"
