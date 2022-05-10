@@ -14,6 +14,7 @@
 
 {% block content %}
 <h1>Главная страница</h1>
+    {% if tasks %}
     {% for el in tasks %}
     <div class="alert alert-warning mt-2">
         <h3>{{el.title}}</h3>
@@ -21,4 +22,7 @@
         <p>{{el.clock}}</p>
     </div>
     {% endfor %}
+    {% else %}
+        <p>Записей нет</p>
+    {% endif %}
 {% endblock %}

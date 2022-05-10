@@ -3,7 +3,7 @@ from django.db import models
 class Task(models.Model):
     title = models.CharField("Название",max_length=50)
     task = models.TextField("Описание")
-    clock = models.FloatField("Время на занятие")
+    clock = models.FloatField("Время на задание")
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
