@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block menu%}
+<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
+<li class="nav-item"><a href="#" class="nav-link">Доставка и оплата</a></li>
+<li class="nav-item"><a href="#" class="nav-link">Документация</a></li>
+<li class="nav-item"><a href="{% url 'create' %}" class="nav-link active" aria-current="page">Oтзывы</a></li>
+<li class="nav-item"><a href="{% url 'about' %}" class="nav-link">Контакты</a></li>
+{% endblock %}
+
+{% block content %}
+<h1>Oтзыв</h1>
+  <from method="post">
+    <input type="text" placeholder="Ваше имя" class="form-control"><br>
+    <textarea type="text" placeholder="Ваш отзыв" class="form-control"></textarea><br>
+    <button type="submit" class="btn btn-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оставить отзыв</font></font></button>
+  </from>
+{% endblock %}
