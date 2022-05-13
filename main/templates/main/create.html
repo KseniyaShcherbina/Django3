@@ -16,9 +16,8 @@
 <h1>Oтзыв</h1>
   <form method="post">
     {% csrf_token %}
-    {{ form.title }}
-    {{ form.task }}
-    <br>
+    {{ form.title }}<br>
+    {{ form.task }}<br>
     <button type="submit" class="btn btn-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оставить отзыв</font></font></button>
   </form>
 {% endblock %}
