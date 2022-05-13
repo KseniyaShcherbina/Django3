@@ -12,3 +12,12 @@ class Task(models.Model):
     class Meta:
         verbose_name="Задача"
         verbose_name_plural = "Задачи"
+
+class Comment(models.Model):
+    author = models.CharField(max_length=100)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name="Отзыв"
+        verbose_name_plural = "Отзывы"

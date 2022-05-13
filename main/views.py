@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
-from .models import Task
-from .forms import TaskForm
+from .models import Task, Comment
+from .forms import CommentForm
 
 def index(request):
     tasks = Task.objects.order_by('clock')
@@ -12,8 +12,14 @@ def about(request):
     return render(request, 'main/about.html')
 
 def create(request):
-    form = TaskForm
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = CommentForm()
+    comments = Comment.objects.all()
     context = {
+        'comments': comments,
         'form': form
     }
     return render(request, 'main/create.html',context)

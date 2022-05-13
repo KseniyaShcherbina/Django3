@@ -1,13 +1,12 @@
-from .models import Task
+from .models import Comment
 from django.forms import ModelForm, widgets, TextInput, Textarea
 
-class TaskForm(ModelForm):
+class CommentForm(ModelForm):
 
     class Meta:
-        model = Task
-        fields = ["title", "task"]
-        widgets = {"title": TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите имя'}),
-            "task": Textarea(attrs={'class': 'form-control', 'placeholder': 'Введите отзыв'})
+        model = Comment
+        fields = ["author", "body"]
+        widgets = {"author": TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите имя'}),
+            "body": Textarea(attrs={'class': 'form-control', 'placeholder': 'Введите отзыв'})
         }
 
-form = TaskForm()

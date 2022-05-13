@@ -13,11 +13,20 @@
 {% endblock %}
 
 {% block content %}
-<h1>Oтзыв</h1>
+<h1>Oтзывы</h1>
+{% for comment in comments %}
+    <p>
+      <b>{{ comment.author }}</b> пишет:
+    </p>
+    <p>{{ comment.body }}</p>
+    {{comment.created_on.date }}
+    <hr>
+    {% endfor %}
+<h3>Оставьте свой отзыв</h3>
   <form method="post">
     {% csrf_token %}
-    {{ form.title }}<br>
-    {{ form.task }}<br>
+    {{ form.author }}<br>
+    {{ form.body }}<br>
     <button type="submit" class="btn btn-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оставить отзыв</font></font></button>
   </form>
 {% endblock %}
